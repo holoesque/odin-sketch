@@ -30,10 +30,10 @@ resetBtn.addEventListener('click', () => {
 // functions
 
 function createBoard(size) {
+  let numDivs = size * size;
+
   cDiv.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   cDiv.style.gridTemplateRows    = `repeat(${size}, 1fr)`;
-
-  let numDivs = size * size;
 
   for (i = 0; i < numDivs; i++) {
     let div = document.createElement('div');
@@ -69,6 +69,6 @@ function setColor(choice) {
 }
 
 function resetBoard() {
-  let divs = document.querySelectorAll('div');
-  divs.forEach((div) => div.style.backgroundColor = 'white');
+  let cells = document.querySelectorAll('div');
+  cells.forEach((div) => div.style.backgroundColor = 'white');
 }
