@@ -35,7 +35,7 @@ function createBoard(size) {
   cDiv.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   cDiv.style.gridTemplateRows    = `repeat(${size}, 1fr)`;
 
-  for (i = 0; i < numDivs; i++) {
+  for (let i = 0; i < numDivs; i++) {
     let div = document.createElement('div');
     div.addEventListener('mouseover', colorDiv);
     cDiv.insertAdjacentElement('beforeend', div);
@@ -43,7 +43,7 @@ function createBoard(size) {
 }
 
 function getSize() {
-  let input = prompt("What size grid would you like?");
+  let input = parseInt(prompt("What size grid would you like?"));
   let message = document.querySelector('#message');
 
   if (input === "") {
